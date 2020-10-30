@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-authentication-bar',
@@ -7,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthenticationBarComponent implements OnInit {
 
-  constructor() { }
+  faUser = faUser;
+  faSignOutAlt = faSignOutAlt;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

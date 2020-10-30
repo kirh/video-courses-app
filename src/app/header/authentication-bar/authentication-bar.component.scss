@@ -1,0 +1,19 @@
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  li {
+    display: block;
+    float: left;
+    padding: 10px;
+
+    .log-off-btn {
+      background-color: inherit;
+      color: inherit;
+      border: 0;
+      cursor: pointer;
+    }
+  }
+}

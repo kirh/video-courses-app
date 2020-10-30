@@ -8,9 +8,9 @@ describe('AuthenticationBarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AuthenticationBarComponent ]
+      declarations: [AuthenticationBarComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

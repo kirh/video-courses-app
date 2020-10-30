@@ -1,0 +1,7 @@
+<div class="search-container">
+  <div class="search-input-container">
+    <fa-icon [icon]="faSearch" flip="horizontal"></fa-icon>
+    <input [(ngModel)]="searchInput" class="search-input" type="text" placeholder="Text to search">
+  </div>
+  <button (click)="onSearch()" class="search-button" type="submit">Search</button>
+</div>
