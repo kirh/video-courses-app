@@ -1,0 +1,24 @@
+<div class="course-list-item-container">
+  <div class="course-list-item">
+    <div class="course-list-item-header">
+      <h2>{{course.title}}</h2>
+      <div class="course-time-info">
+        <fa-icon [icon]="faClock"></fa-icon>
+        <span>{{course.duration | duration}}</span>
+        <fa-icon [icon]="faCalendar"></fa-icon>
+        <span>{{course.creationDate | date:'mediumDate'}}</span>
+      </div>
+    </div>
+    <p>{{course.description}}</p>
+  </div>
+  <div>
+    <button class="course-btn">
+      <fa-icon [icon]="faPen" class="button-icon"></fa-icon>
+      Edit
+    </button>
+    <button class="course-btn" (click)="onDelete()">
+      <fa-icon [icon]="faTrash" class="button-icon"></fa-icon>
+      Delete
+    </button>
+  </div>
+</div>

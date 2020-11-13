@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faPlayCircle } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-logo',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogoComponent implements OnInit {
 
-  constructor() { }
+  faPlayCircle = faPlayCircle;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

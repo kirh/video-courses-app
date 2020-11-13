@@ -1,0 +1,17 @@
+header {
+  background-color: #30323f;
+  color: white;
+  height: 100px;
+  position: relative;
+}
+
+app-logo {
+  position: absolute;
+  left: 100px;
+}
+
+app-authentication-bar {
+  position: absolute;
+  right: 20px;
+  bottom: 0px;
+}

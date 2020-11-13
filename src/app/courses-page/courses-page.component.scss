@@ -1,0 +1,20 @@
+.courses-page-container {
+  background-color: whitesmoke;
+  padding: 30px 50px;
+
+  .add-course-btn {
+    float: right;
+    color: white;
+    background-color: #009ecd;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 2px;
+
+    fa-icon {
+      margin-right: 10px;
+    }
+  }
+}
+
+
+

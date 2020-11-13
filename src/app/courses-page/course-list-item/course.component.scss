@@ -1,0 +1,42 @@
+.course-list-item-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 2px;
+  box-shadow: 0px 0px 3px 0px lightgrey;
+  margin-top: 30px;
+  padding: 10px;
+  background-color: white;
+
+  .course-list-item {
+    width: 70%;
+
+    .course-list-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .course-time-info {
+        color: #8a8e9b;
+
+        fa-icon {
+          margin-left: 10px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  .course-btn {
+    color: white;
+    background-color: #009ecd;
+    padding: 10px 20px;
+    border: none;
+    margin: 10px;
+    border-radius: 2px;
+
+    fa-icon {
+      margin-right: 10px;
+    }
+  }
+}
