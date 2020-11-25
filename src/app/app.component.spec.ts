@@ -1,15 +1,24 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { CoursesPageModule } from './courses-page/courses-page.module';
+import { LogoComponent } from './header/logo/logo.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AuthenticationBarComponent } from './header/authentication-bar/authentication-bar.component';
+import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        CoursesPageModule,
+        FontAwesomeModule
       ],
       declarations: [
-        AppComponent
+        AppComponent, HeaderComponent, LogoComponent, AuthenticationBarComponent, BreadcrumbsComponent, FooterComponent
       ],
     }).compileComponents();
   });
@@ -26,10 +35,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('video-course');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('video-course app is running!');
-  });
 });
