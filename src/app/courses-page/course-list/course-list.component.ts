@@ -17,10 +17,6 @@ export class CourseListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onLoadMore(): void {
-    console.log('Load more...');
-  }
-
   onDelete(id: number): void {
     this.deleteCourse.emit(id);
   }

@@ -1,4 +1,4 @@
-.course-list-item-container {
+.course-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -8,23 +8,33 @@
   padding: 10px;
   background-color: white;
 
-  .course-list-item {
+  .course {
     width: 70%;
 
-    .course-list-item-header {
+    .course-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
 
-      .course-time-info {
-        color: #8a8e9b;
-
-        fa-icon {
+      .course-title {
+         h2 {
+           display: inline-block;
+         }
+        .top-rated-star {
           margin-left: 10px;
-          margin-right: 5px;
+          color: orange;
         }
       }
+
+      .course-time-info {
+        color: #8a8e9b;
+      }
     }
+  }
+
+  fa-icon {
+    margin-left: 10px;
+    margin-right: 5px;
   }
 
   .course-btn {
@@ -39,4 +49,8 @@
       margin-right: 10px;
     }
   }
+}
+
+.top-rated {
+  background-color: lightyellow;
 }

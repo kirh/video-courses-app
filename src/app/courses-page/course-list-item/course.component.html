@@ -1,7 +1,10 @@
-<div class="course-list-item-container">
-  <div class="course-list-item">
-    <div class="course-list-item-header">
-      <h2>{{course.title}}</h2>
+<div class="course-container" appHighlight [date]="course.creationDate" [ngClass]="{'top-rated': course.isTopRated}">
+  <div class="course">
+    <div class="course-header">
+      <div class="course-title">
+        <h2>{{course.title | uppercase}}</h2>
+        <fa-icon class="top-rated-star" [icon]="faStar" *ngIf="course.isTopRated"></fa-icon>
+      </div>
       <div class="course-time-info">
         <fa-icon [icon]="faClock"></fa-icon>
         <span class="course-duration">{{course.duration | duration}}</span>
