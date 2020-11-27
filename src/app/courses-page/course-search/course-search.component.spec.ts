@@ -26,13 +26,12 @@ describe('CourseSearchComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should log on search', () => {
-    spyOn(console, 'log');
+  it('should emit event on search', () => {
     const input = fixture.nativeElement.querySelector('.search-input');
     const searchButton = fixture.nativeElement.querySelector('.search-button');
     input.value = 'value';
     input.dispatchEvent(new Event('input'));
+    component.search.subscribe((text: string) => expect(text).toBe('value'));
     searchButton.click();
-    expect(console.log).toHaveBeenCalledWith('Searching for value');
   });
 });

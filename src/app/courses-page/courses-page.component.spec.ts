@@ -9,15 +9,20 @@ import { CourseSearchComponent } from './course-search/course-search.component';
 import { CourseComponent } from './course-list-item/course.component';
 import { DurationPipe } from './course-list-item/duration.pipe';
 import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './filter.pipe';
+import { OrderByPipe } from './course-list/order-by.pipe';
+import { HighlightDirective } from './course-list-item/highlight.directive';
 
-describe('CoursesComponent', () => {
+describe('CoursesPageComponent', () => {
   let component: CoursesPageComponent;
   let fixture: ComponentFixture<CoursesPageComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [CoursesPageComponent, CourseListComponent, CourseSearchComponent, CourseComponent, DurationPipe],
-      imports: [FontAwesomeModule, FormsModule]
+      declarations: [CoursesPageComponent, CourseListComponent, CourseSearchComponent, CourseComponent, DurationPipe, FilterPipe,
+        OrderByPipe, HighlightDirective],
+      imports: [FontAwesomeModule, FormsModule],
+      providers: [FilterPipe]
     })
       .compileComponents();
   }));
@@ -42,5 +47,12 @@ describe('CoursesComponent', () => {
 
   it('should have courses', () => {
     expect(component.courses.length).toBe(4);
+  });
+
+  it('should loadMore', () => {
+    const loadMoreButton = fixture.nativeElement.querySelector('.load-more-btn');
+    loadMoreButton.click();
+    fixture.detectChanges();
+    expect(console.log).toHaveBeenCalledWith('Load more...');
   });
 });

@@ -6,6 +6,8 @@ import { By } from '@angular/platform-browser';
 import { CourseComponent } from '../course-list-item/course.component';
 import { DurationPipe } from '../course-list-item/duration.pipe';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { OrderByPipe } from './order-by.pipe';
+import { HighlightDirective } from '../course-list-item/highlight.directive';
 
 describe('CourseListComponent', () => {
   let component: CourseListComponent;
@@ -13,7 +15,7 @@ describe('CourseListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CourseListComponent, CourseComponent, DurationPipe],
+      declarations: [CourseListComponent, CourseComponent, DurationPipe, OrderByPipe, HighlightDirective],
       imports: [FontAwesomeModule]
     })
       .compileComponents();
@@ -33,14 +35,6 @@ describe('CourseListComponent', () => {
   it('should display courses', () => {
     const courses = fixture.nativeElement.querySelectorAll('app-course');
     expect(courses.length).toBe(4);
-  });
-
-  it('should loadMore', () => {
-    spyOn(console, 'log');
-    const loadMoreButton = fixture.nativeElement.querySelector('.load-more-btn');
-    loadMoreButton.click();
-    fixture.detectChanges();
-    expect(console.log).toHaveBeenCalledWith('Load more...');
   });
 
   it('should raise deleteCourse event on delete', () => {

@@ -1,8 +1,10 @@
 <div class="courses-page-container">
-  <app-course-search></app-course-search>
+  <app-course-search (search)="onSearch($event)"></app-course-search>
   <button class="add-course-btn">
     <fa-icon [icon]="faPlusCircle"></fa-icon>
     Add course
   </button>
   <app-course-list [courses]="courses" (deleteCourse)="onDelete($event)"></app-course-list>
+  <button *ngIf="isLoadMoreButtonShown()" (click)="onLoadMore()" class="load-more-btn">Load more</button>
+  <div class="no-data" *ngIf="!courses.length">NO DATA. FEEL FREE TO ADD NEW COURSE</div>
 </div>

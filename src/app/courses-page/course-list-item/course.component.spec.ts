@@ -5,13 +5,16 @@ import { DurationPipe } from './duration.pipe';
 import { ICourse } from '../shared/course.model';
 import { Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { OrderByPipe } from '../course-list/order-by.pipe';
+import { HighlightDirective } from './highlight.directive';
 
 const course: ICourse = {
   id: 1,
   title: 'title',
   description: 'description',
   creationDate: new Date(0),
-  duration: 60000
+  duration: 1000,
+  isTopRated: false
 };
 
 describe('CourseComponent as a class', () => {
@@ -31,7 +34,7 @@ describe('CourseComponent as standalone component', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [CourseComponent, DurationPipe],
+      declarations: [CourseComponent, DurationPipe, OrderByPipe, HighlightDirective],
       imports: [FontAwesomeModule]
     })
       .compileComponents();
@@ -49,13 +52,13 @@ describe('CourseComponent as standalone component', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should display title', () => {
-    const header = componentEl.querySelector('.course-list-item-header > h2');
-    expect(header.textContent).toBe('title');
+  it('should display title in uppercase', () => {
+    const header = componentEl.querySelector('.course-title > h2');
+    expect(header.textContent).toBe('TITLE');
   });
 
   it('should display description', () => {
-    const description = componentEl.querySelector('.course-list-item > p');
+    const description = componentEl.querySelector('.course > p');
     expect(description.textContent).toBe('description');
   });
 
@@ -66,7 +69,7 @@ describe('CourseComponent as standalone component', () => {
 
   it('should display course duration', () => {
     const duration = componentEl.querySelector('.course-duration');
-    expect(duration.textContent).toBe('16h 40min');
+    expect(duration.textContent).toBe('16 h 40 min');
   });
 
   it('should raise deleteCourse event when delete button clicked', () => {
@@ -96,7 +99,7 @@ describe('CourseComponent within a host component', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [HostComponent, CourseComponent, DurationPipe],
+      declarations: [HostComponent, CourseComponent, DurationPipe, HighlightDirective],
       imports: [FontAwesomeModule]
     })
       .compileComponents();
@@ -112,13 +115,13 @@ describe('CourseComponent within a host component', () => {
     expect(courseEl).toBeTruthy();
   });
 
-  it('should display title', () => {
-    const header = courseEl.querySelector('.course-list-item-header > h2');
-    expect(header.textContent).toBe('title');
+  it('should display title in uppercase', () => {
+    const header = courseEl.querySelector('.course-title > h2');
+    expect(header.textContent).toBe('TITLE');
   });
 
   it('should display description', () => {
-    const description = courseEl.querySelector('.course-list-item > p');
+    const description = courseEl.querySelector('.course > p');
     expect(description.textContent).toBe('description');
   });
 
@@ -129,7 +132,7 @@ describe('CourseComponent within a host component', () => {
 
   it('should display course duration', () => {
     const duration = courseEl.querySelector('.course-duration');
-    expect(duration.textContent).toBe('16h 40min');
+    expect(duration.textContent).toBe('16 h 40 min');
   });
 
   it('should raise deleteCourse event when delete button clicked', () => {

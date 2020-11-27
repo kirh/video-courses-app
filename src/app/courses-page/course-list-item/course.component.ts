@@ -4,6 +4,7 @@ import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-course',
@@ -19,6 +20,7 @@ export class CourseComponent implements OnInit {
   public faTrash = faTrash;
   public faCalendar = faCalendar;
   public faClock = faClock;
+  public faStar = faStar;
 
   constructor() {
   }

@@ -9,7 +9,6 @@ import { LogoComponent } from './header/logo/logo.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { AuthenticationBarComponent } from './header/authentication-bar/authentication-bar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { DurationPipe } from './courses-page/course-list-item/duration.pipe';
 import { CoursesPageModule } from './courses-page/courses-page.module';
 
 @NgModule({
@@ -20,7 +19,6 @@ import { CoursesPageModule } from './courses-page/courses-page.module';
     LogoComponent,
     BreadcrumbsComponent,
     AuthenticationBarComponent,
-    DurationPipe
   ],
   imports: [
     BrowserModule,
