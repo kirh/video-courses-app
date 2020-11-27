@@ -22,4 +22,9 @@ describe('FooterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should display copyright', () => {
+    const footer = fixture.nativeElement.querySelector('footer');
+    expect(footer.textContent).toBe('Copyright ©Videocourse. All rights reserved');
+  });
 });
